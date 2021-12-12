@@ -16,3 +16,4 @@ Documenting my journey to learning selenium!
  - Exception Handling
  - Robots
  - JUnit 4 with Selenium!
+ - TestNG with JUnit and Selenium!
