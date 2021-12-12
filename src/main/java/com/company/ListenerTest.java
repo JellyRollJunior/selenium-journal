@@ -18,21 +18,25 @@ public class ListenerTest implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
+        System.out.println("Test Started: " + result.getName());
         ITestListener.super.onTestStart(result);
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
+        System.out.println("Test Success: " + result.getName());
         ITestListener.super.onTestSuccess(result);
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
+        System.out.println("Test Failed: " + result.getName());
         ITestListener.super.onTestFailure(result);
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
+        System.out.println("Test Skipped: " + result.getName());
         ITestListener.super.onTestSkipped(result);
     }
 
