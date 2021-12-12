@@ -35,7 +35,7 @@ public class DemoTest {
 
     @Test
     public void failTest() {
-        Assert.assertTrue(false);
+        Assert.fail();
     }
 
     @Ignore
