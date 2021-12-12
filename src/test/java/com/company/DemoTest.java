@@ -1,10 +1,17 @@
 package com.company;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Listeners;
+
 
 import static org.junit.jupiter.api.Assertions.*;
+
+@Listeners(ListenerTest.class)
 
 public class DemoTest {
 
@@ -24,6 +31,16 @@ public class DemoTest {
 
         String expectedTitle = "Google";
         assertEquals(expectedTitle, title);
+    }
+
+    @Test
+    public void failTest() {
+        Assert.assertTrue(false);
+    }
+
+    @Ignore
+    public void ignoreTest() {
+
     }
 
     @AfterClass
