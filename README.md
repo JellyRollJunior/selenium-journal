@@ -1,6 +1,9 @@
 # selenium-test
 Documenting my journey to learning selenium!
 
+## Reflection:
+
+
 ## Code Samples:
  - Driver setup
  - Web Elements
@@ -12,3 +15,4 @@ Documenting my journey to learning selenium!
  - Listeners
  - Exception Handling
  - Robots
+ - JUnit 4 with Selenium!
