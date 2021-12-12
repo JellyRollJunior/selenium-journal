@@ -18,7 +18,7 @@ public class DemoTest {
     }
 
     @Test
-    public void getGoogle() throws Exception{
+    public void getGoogle() {
         driver.get("https://www.google.ca");
         String title = driver.getTitle();
 
