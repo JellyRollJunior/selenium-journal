@@ -17,3 +17,5 @@ Documenting my journey to learning selenium!
  - Robots
  - JUnit 4 with Selenium!
  - TestNG with JUnit and Selenium!
+ - Cross Browser Testing with TestNG xml file!!!
+   - Automated Chrome + Safari testing 
