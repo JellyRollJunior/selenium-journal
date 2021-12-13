@@ -92,8 +92,8 @@ public class DemoTest {
         enterShop.perform();
 
         // SAFARI LOADS SUPER SLOW SO I NEED THE SLEEP BEFORE GET TITLE
-        new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.titleIs(expectedTitle));
         expectedTitle = "THE SHOP YOHJI YAMAMOTO";
+        new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.titleIs(expectedTitle));
         pageTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, pageTitle);
         Thread.sleep(3000);
