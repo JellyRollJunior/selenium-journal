@@ -2,7 +2,8 @@
 Documenting my journey to learning selenium!
 
 ## Reflection:
-
+I got some good debugging experience when doing CrossPlatformTests. 
+ - Chrome was passing tests but Safari wasn't! It was a big headache getting element not visible / node not visible / stale element / element out of bounds exceptions until I figured out Safari loads slower than chrome so i needed to place some WebDriverWaits to account for Safaris snail loading. 
 
 ## Code Samples:
  - Driver setup
