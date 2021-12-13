@@ -4,6 +4,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import org.junit.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -51,18 +53,25 @@ public class DemoTest {
 
     @Test
     public void getYohji() throws InterruptedException {
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         driver.get("https://www.google.ca");
+        driver.manage().window().maximize();
         Thread.sleep(1000);
 
         WebElement searchBar = driver.findElement(By.xpath("//body/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/input[1]"));
         WebElement googleSearch = driver.findElement(By.cssSelector("input.gNO89b"));
         Actions builder = new Actions(driver);
-        Action searchYohji = builder
-                .sendKeys(searchBar, "yohji")
-                .keyDown(googleSearch, Keys.SHIFT)
-                .keyUp(googleSearch, Keys.SHIFT)
-                .build();
-        searchYohji.perform();
+
+        builder.sendKeys(searchBar, "yohji").build().perform();
+
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOf(googleSearch));
+
+        builder.moveToElement(googleSearch).click()
+                .build().perform();
+//        searchYohji.perform();
+
+        Thread.sleep(5000);
 
         String expectedTitle = "yohji - Google Search";
         String pageTitle = driver.getTitle();
@@ -79,6 +88,8 @@ public class DemoTest {
                 .click()
                 .build();
         enterShop.perform();
+
+        Thread.sleep(3000);
 
         expectedTitle = "THE SHOP YOHJI YAMAMOTO";
         pageTitle = driver.getTitle();
