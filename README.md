@@ -19,3 +19,4 @@ Documenting my journey to learning selenium!
  - TestNG with JUnit and Selenium!
  - Cross Browser Testing with TestNG xml file!!!
    - Automated Chrome + Safari testing 
+ - Actions and Action class 
