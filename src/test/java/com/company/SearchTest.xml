@@ -3,7 +3,7 @@
 <suite name="Search Test">
 
     <test verbose="2" name="ChromeTest">
-        <parameter name="browser" value="Safari" />
+        <parameter name="browser" value="Chrome" />
         <classes>
             <class name="com.company.DemoTest">
                 <methods>
