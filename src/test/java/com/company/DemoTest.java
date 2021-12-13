@@ -62,16 +62,18 @@ public class DemoTest {
         WebElement googleSearch = driver.findElement(By.cssSelector("input.gNO89b"));
         Actions builder = new Actions(driver);
 
-        builder.sendKeys(searchBar, "yohji").build().perform();
+        String search = "yohji";
+        Action enterSearch = builder.sendKeys(searchBar, search).build();
+        enterSearch.perform();
 
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.visibilityOf(googleSearch));
-
-        builder.moveToElement(googleSearch).click()
-                .build().perform();
-//        searchYohji.perform();
-
-        Thread.sleep(5000);
+        Action clickSearch = builder
+                .moveToElement(googleSearch)
+                .click()
+                .build();
+        clickSearch.perform();
+        Thread.sleep(2000);
 
         String expectedTitle = "yohji - Google Search";
         String pageTitle = driver.getTitle();
@@ -89,8 +91,8 @@ public class DemoTest {
                 .build();
         enterShop.perform();
 
-        Thread.sleep(3000);
-
+        // SAFARI LOADS SUPER SLOW SO I NEED THE SLEEP BEFORE GET TITLE
+        new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.titleIs(expectedTitle));
         expectedTitle = "THE SHOP YOHJI YAMAMOTO";
         pageTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, pageTitle);
