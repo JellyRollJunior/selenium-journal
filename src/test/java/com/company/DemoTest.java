@@ -4,6 +4,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
+import org.openqa.selenium.support.events.WebDriverListener;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
@@ -28,16 +30,20 @@ public class DemoTest {
     @BeforeClass
     @Parameters("browser")
     public void browserOpen(String browser) throws Exception {
+        WebDriver driver1;
         if (browser.equalsIgnoreCase("Chrome")) {
             String chromeDriverLoc = "/Users/brandonlin/Documents/Projects/ExternalLibraries/SeleniumDrivers/chromedriver";
 
             System.setProperty("webdriver.chrome.driver", chromeDriverLoc);
-            driver = new ChromeDriver();
+            driver1 = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("Safari")) {
-            driver = new SafariDriver();
+            driver1 = new SafariDriver();
         } else {
             throw new Exception("Invalid Browser");
         }
+
+        WebDriverListener listener = new EventListener();
+        driver = new EventFiringDecorator(listener).decorate(driver1);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
@@ -73,9 +79,10 @@ public class DemoTest {
                 .click()
                 .build();
         clickSearch.perform();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         String expectedTitle = "yohji - Google Search";
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.titleIs(expectedTitle));
         String pageTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, pageTitle);
         Thread.sleep(2000);
@@ -93,7 +100,7 @@ public class DemoTest {
 
         // SAFARI LOADS SUPER SLOW SO I NEED THE SLEEP BEFORE GET TITLE
         expectedTitle = "THE SHOP YOHJI YAMAMOTO";
-        new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.titleIs(expectedTitle));
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.titleIs(expectedTitle));
         pageTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, pageTitle);
         Thread.sleep(3000);
