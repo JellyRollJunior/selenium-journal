@@ -21,3 +21,5 @@ I got some good debugging experience when doing CrossPlatformTests.
  - Cross Browser Testing with TestNG xml file!!!
    - Automated Chrome + Safari testing 
  - Actions and Action class 
+ - WebDriverWait
+ - JavaScriptExecutor
