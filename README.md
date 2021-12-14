@@ -8,6 +8,7 @@ I got some good debugging experience when doing CrossPlatformTests.
 ## Code Samples:
  - Driver setup
  - Web Elements
+ - Locators
    - CssSelector
    - XPath
  - Implicit Waits
