@@ -64,8 +64,8 @@ public class DemoTest {
         driver.manage().window().maximize();
         Thread.sleep(1000);
 
-        WebElement searchBar = driver.findElement(By.xpath("//body/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/input[1]"));
-        WebElement googleSearch = driver.findElement(By.cssSelector("input.gNO89b"));
+        WebElement searchBar = driver.findElement(By.className("gsfi"));
+        WebElement googleSearch = driver.findElement(By.className("gNO89b"));
         Actions builder = new Actions(driver);
 
         String search = "yohji";
