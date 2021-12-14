@@ -11,11 +11,14 @@ I got some good debugging experience when doing CrossPlatformTests.
  - Locators
    - CssSelector
    - XPath
- - Implicit Waits
- - Explicit Waits
+ - Waits
+   - Implicit Waits
+   - Explicit Waits
+     - WebDriverWait
  - Alerts
  - Listeners
  - Exception Handling
+ - Actions and Action class 
  - Robot class
    - basically only use this when Action is insufficient 
    - ex: Action class uses WebDriver API to perform events so if an OS popup occurs, need to use Robot
@@ -23,6 +26,4 @@ I got some good debugging experience when doing CrossPlatformTests.
  - TestNG with JUnit and Selenium!
  - Cross Browser Testing with TestNG xml file!!!
    - Automated Chrome + Safari testing 
- - Actions and Action class 
- - WebDriverWait
  - JavaScriptExecutor
