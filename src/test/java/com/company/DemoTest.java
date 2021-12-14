@@ -79,16 +79,15 @@ public class DemoTest {
                 .click()
                 .build();
         clickSearch.perform();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         String expectedTitle = "yohji - Google Search";
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.titleIs(expectedTitle));
         String pageTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, pageTitle);
         Thread.sleep(2000);
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, 600)");
+        js.executeScript("window.scrollBy(0, 400)");
         Thread.sleep(2000);
 
         WebElement theShop = driver.findElement(By.xpath("//h3[contains(text(), 'THE SHOP YOHJI')]"));
