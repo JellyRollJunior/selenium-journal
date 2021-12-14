@@ -16,7 +16,9 @@ I got some good debugging experience when doing CrossPlatformTests.
  - Alerts
  - Listeners
  - Exception Handling
- - Robots
+ - Robot class
+   - basically only use this when Action is insufficient 
+   - ex: Action class uses WebDriver API to perform events so if an OS popup occurs, need to use Robot
  - JUnit 4 with Selenium!
  - TestNG with JUnit and Selenium!
  - Cross Browser Testing with TestNG xml file!!!
