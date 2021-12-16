@@ -9,7 +9,7 @@ I got some good debugging experience when doing CrossPlatformTests.
  - Driver setup
  - Web Elements
  - Locators
-   - CssSelector
+   - CssSelector: practicing complex queries 
    - XPath
  - Waits
    - Implicit Waits
