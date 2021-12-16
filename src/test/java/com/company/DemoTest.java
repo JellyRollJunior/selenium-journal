@@ -30,20 +30,20 @@ public class DemoTest {
     @BeforeClass
     @Parameters("browser")
     public void browserOpen(String browser) throws Exception {
-        WebDriver driver1;
+        WebDriver undecorated;
         if (browser.equalsIgnoreCase("Chrome")) {
             String chromeDriverLoc = "/Users/brandonlin/Documents/Projects/ExternalLibraries/SeleniumDrivers/chromedriver";
 
             System.setProperty("webdriver.chrome.driver", chromeDriverLoc);
-            driver1 = new ChromeDriver();
+            undecorated = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("Safari")) {
-            driver1 = new SafariDriver();
+            undecorated = new SafariDriver();
         } else {
             throw new Exception("Invalid Browser");
         }
 
         WebDriverListener listener = new EventListener();
-        driver = new EventFiringDecorator(listener).decorate(driver1);
+        driver = new EventFiringDecorator(listener).decorate(undecorated);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
@@ -103,6 +103,16 @@ public class DemoTest {
         pageTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, pageTitle);
         Thread.sleep(3000);
+    }
+
+    @Test
+    public void cssSelectorPractice() {
+
+    }
+
+    @Test
+    public void xPathPractice() {
+
     }
 
     @Test
