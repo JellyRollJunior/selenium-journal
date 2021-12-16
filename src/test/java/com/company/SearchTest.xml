@@ -7,7 +7,7 @@
         <classes>
             <class name="com.company.DemoTest">
                 <methods>
-                    <include name="getYohji"/>
+                    <include name="cssSelectorPractice"/>
                 </methods>
             </class>
         </classes>

@@ -1,5 +1,6 @@
 package com.company;
 
+import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -103,16 +104,6 @@ public class DemoTest {
         pageTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, pageTitle);
         Thread.sleep(3000);
-    }
-
-    @Test
-    public void cssSelectorPractice() {
-
-    }
-
-    @Test
-    public void xPathPractice() {
-
     }
 
     @Test
