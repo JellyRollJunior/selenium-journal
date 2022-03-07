@@ -50,7 +50,7 @@ public class DemoTest {
 
     @Test
     public void getGoogle() throws InterruptedException {
-        driver.get("https://www.google.ca");
+        driver.get("http://s3.amazonaws.com/istreet-assets/bHFRMn4JHQnwP7QcqCer7w/fortinet-qa-testsite.html");
         String title = driver.getTitle();
         Thread.sleep(2000);
 
@@ -118,6 +118,6 @@ public class DemoTest {
 
     @AfterClass
     public void browserClose() {
-        driver.quit();
+        //driver.quit();
     }
 }
