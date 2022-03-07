@@ -1,4 +1,4 @@
-# selenium-test
+# selenium-journal
 Documenting my journey to learning selenium!
 
 ## Reflection:
